@@ -48,8 +48,6 @@ HD_Pe_slope_100m<- lm(Average_d13C~HD+Peat+Slope_mean, data=riparian_100m)
 Alt_Pe_100m<- lm(Average_d13C~Alt_mean+Peat, data=riparian_100m)
 global_100m <- lm(Average_d13C~LD+Pastures+Slope_mean+Alt_mean+HD+MD+TWS+CF+
                     Peat, data=riparian_100m)
-# multivariable models with interactions
-LDPa_100m <- lm(Average_d13C~LD*Pastures, data = riparian_100m)
 
 #model selection
 models_100m <- model.sel(CF_100m,MH_100m,Pa_100m,Pe_100m,TWS_100m,LD_100m,
@@ -59,7 +57,7 @@ models_100m <- model.sel(CF_100m,MH_100m,Pa_100m,Pe_100m,TWS_100m,LD_100m,
                          Pa_alt_100m,Pa_MD_100m,Pa_HD_alt_100m,Pa_MD_alt_100m,
                          Pa_MD_HD_alt_100m,Pa_MD_HD_100m,TWS_CF_100m,
                          TWS_alt_100m, TWS_CF_alt_100m,HD_Pe_100m,HD_slope_100m,
-                         HD_Pe_slope_100m, Alt_Pe_100m, LDPa_100m,global_100m)
+                         HD_Pe_slope_100m, Alt_Pe_100m, global_100m)
 
 # confidence set
 conf_set_100m <- models_100m[models_100m$delta<2, ]
@@ -101,8 +99,6 @@ HD_Pe_slope_1km<- lm(Average_d13C~HD+Peat+Slope_mean, data=point_1km)
 Alt_Pe_1km<- lm(Average_d13C~Alt_mean+Peat, data=point_1km)
 global_1km <- lm(Average_d13C~LD+Pastures+Slope_mean+Alt_mean+HD+MD+TWS+CF+
                     Peat, data=point_1km)
-# multivariable models with interactions
-LDPa_1km <- lm(Average_d13C~LD*Pastures, data = point_1km)
 
 #model selection
 models_1km <- model.sel(CF_1km,MH_1km,Pa_1km,Pe_1km,TWS_1km,LD_1km,
@@ -112,7 +108,7 @@ models_1km <- model.sel(CF_1km,MH_1km,Pa_1km,Pe_1km,TWS_1km,LD_1km,
                          Pa_alt_1km,Pa_MD_1km,Pa_HD_alt_1km,Pa_MD_alt_1km,
                          Pa_MD_HD_alt_1km,Pa_MD_HD_1km,TWS_CF_1km,
                          TWS_alt_1km, TWS_CF_alt_1km,HD_Pe_1km,HD_slope_1km,
-                         HD_Pe_slope_1km, Alt_Pe_1km, LDPa_1km,global_1km)
+                         HD_Pe_slope_1km, Alt_Pe_1km, global_1km)
 
 # confidence set
 conf_set_1km <- models_1km[models_1km$delta<2, ]
@@ -155,8 +151,6 @@ HD_Pe_slope_50m<- lm(Average_d13C~HD+Peat+Slope_mean, data=riparian_50m)
 Alt_Pe_50m<- lm(Average_d13C~Alt_mean+Peat, data=riparian_50m)
 global_50m <- lm(Average_d13C~LD+Pastures+Slope_mean+Alt_mean+HD+MD+TWS+CF+
                     Peat, data=riparian_50m)
-# multivariable models with interactions
-LDPa_50m <- lm(Average_d13C~LD*Pastures, data = riparian_50m)
 
 #model selection
 models_50m <- model.sel(CF_50m,MH_50m,Pa_50m,Pe_50m,TWS_50m,LD_50m,
@@ -166,7 +160,7 @@ models_50m <- model.sel(CF_50m,MH_50m,Pa_50m,Pe_50m,TWS_50m,LD_50m,
                          Pa_alt_50m,Pa_MD_50m,Pa_HD_alt_50m,Pa_MD_alt_50m,
                          Pa_MD_HD_alt_50m,Pa_MD_HD_50m,TWS_CF_50m,
                          TWS_alt_50m, TWS_CF_alt_50m,HD_Pe_50m,HD_slope_50m,
-                         HD_Pe_slope_50m, Alt_Pe_50m, LDPa_50m,global_50m)
+                         HD_Pe_slope_50m, Alt_Pe_50m, global_50m)
 
 # confidence set
 conf_set_50m <- models_50m[models_50m$delta<2, ]
@@ -209,8 +203,6 @@ HD_Pe_slope_100m<- lm(Average_d13C~HD+Peat+Slope_mean, data=riparian_100m)
 Alt_Pe_100m<- lm(Average_d13C~Alt_mean+Peat, data=riparian_100m)
 global_100m <- lm(Average_d13C~LD+Pastures+Slope_mean+Alt_mean+HD+MD+TWS+CF+
                     Peat, data=riparian_100m)
-# multivariable models with interactions
-LDPa_100m <- lm(Average_d13C~LD*Pastures, data = riparian_100m)
 
 #model selection
 models_100m <- model.sel(CF_100m,MH_100m,Pa_100m,Pe_100m,TWS_100m,LD_100m,
@@ -220,7 +212,7 @@ models_100m <- model.sel(CF_100m,MH_100m,Pa_100m,Pe_100m,TWS_100m,LD_100m,
                          Pa_alt_100m,Pa_MD_100m,Pa_HD_alt_100m,Pa_MD_alt_100m,
                          Pa_MD_HD_alt_100m,Pa_MD_HD_100m,TWS_CF_100m,
                          TWS_alt_100m, TWS_CF_alt_100m,HD_Pe_100m,HD_slope_100m,
-                         HD_Pe_slope_100m, Alt_Pe_100m, LDPa_100m,global_100m)
+                         HD_Pe_slope_100m, Alt_Pe_100m, global_100m)
 
 # confidence set
 conf_set_100m <- models_100m[models_100m$delta<2, ]

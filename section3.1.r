@@ -19,10 +19,6 @@ kruskal.test(d15N~Site, data=site_isotope_data)
 
 # Figures
 
-# Reorder Site based on median d13C
-site_isotope_data$Site <- reorder(site_isotope_data$Site, 
-                                  site_isotope_data$d13C, median, na.rm = TRUE)
-
 # Create Fig 3a
 trout_c_plot <- ggplot(site_isotope_data, aes(x = Site, y = d13C, 
                                               fill = Catchment)) +
@@ -33,15 +29,14 @@ trout_c_plot <- ggplot(site_isotope_data, aes(x = Site, y = d13C,
     axis.text.x = element_text(angle = 45, hjust = 1),
     legend.position = "bottom")+
   ylab(expression(paste(delta^{13}, "C (\u2030)"))) +
-  xlab("Site (Ordered by δ¹³C Median)") +
+  xlab("Site (Ordered by site name)") +
   labs(fill = "Catchment") +
-  scale_fill_brewer(palette = "Set1")
+  scale_fill_brewer(palette = "Set1")+
+  annotate("text", x=3, y=-23, label= "A") 
 trout_c_plot
 
 
 # Create Fig 3b
-site_isotope_data$Site <- reorder(site_isotope_data$Site, 
-                                  site_isotope_data$d15N, median, na.rm = TRUE)
 trout_n_plot <- ggplot(site_isotope_data, aes(x = Site, y = d15N, 
                                               fill = Catchment)) +
   geom_boxplot() +
@@ -51,9 +46,10 @@ trout_n_plot <- ggplot(site_isotope_data, aes(x = Site, y = d15N,
     axis.text.x = element_text(angle = 45, hjust = 1),
     legend.position = "bottom")+
   ylab(expression(paste(delta^{15}, "N (\u2030)"))) +
-  xlab("Site (Ordered by δ¹⁵N Median)") +
+  xlab("Site (Ordered by site name)") +
   labs(fill = "Catchment") +
-  scale_fill_brewer(palette = "Set1")
+  scale_fill_brewer(palette = "Set1")+
+  annotate("text", x=3, y=13, label= "B") 
 trout_n_plot
 
 # Trout-Baetis isotope comparison -----------------------------------------

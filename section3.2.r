@@ -53,19 +53,16 @@ Alt_Pe<- glm(Average_d13C~Alt_mean+Peat, data=catchment_data)
 global <- glm(Average_d13C~Low.drainage+Pastures+Slope_mean+Alt_mean
               +High.drainage+Mixed.drainage+TWS+CF+Peat, data=catchment_data)
 
-# Multivariable model with interactions
-LDPa <- glm(Average_d13C~Low.drainage*Pastures, data = catchment_data)
-
 
 # Model selection
 model.sel(CF,MH,Pa,Pe,TWS,LD,MD,HD,Alt,Slope,LD_Pa,LD_alt,LD_slope,LD_Pa_alt,
           LD_Pa_slope,LD_Pa_alt_slope, Pa_HD,Pa_alt,Pa_MD,Pa_HD_alt,Pa_MD_alt,
           Pa_MD_HD_alt,Pa_MD_HD, TWS_CF,TWS_alt,TWS_CF_alt, HD_Pe,HD_slope,
-          HD_Pe_slope, Alt_Pe, LDPa,global)
+          HD_Pe_slope, Alt_Pe, global)
 
 # Create Figure 5 
 # Use ggpredict to derive predictions from model over required terms and scale
-predictions <- ggpredict(LDPa, terms = c("Low.drainage", "Pastures [0,50,100]"))
+predictions <- ggpredict(LD_Pa, terms = c("Low.drainage", "Pastures [0,50,100]"))
 
 # Create model plot
 p <- ggplot()+
